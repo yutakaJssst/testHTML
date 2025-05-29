@@ -1,0 +1,117 @@
+/* 基本スタイル */
+body {
+    font-family: 'Arial', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #35424a;
+    color: #ffffff;
+    padding: 1.5rem 0;
+    text-align: center;
+    border-bottom: #e8491d 3px solid;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+main {
+    padding: 20px;
+    max-width: 1000px; /* コンテンツの最大幅 */
+    margin: 20px auto; /* 中央寄せ */
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+section {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px dotted #ccc;
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+h2 {
+    color: #e8491d;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+p {
+    margin-bottom: 15px;
+    text-align: justify; /* 文章の見た目を整える */
+}
+
+/* ギャラリースタイル */
+.gallery {
+    display: flex;
+    flex-wrap: wrap; /* 画像がコンテナ幅を超えたら折り返す */
+    justify-content: space-around; /* 画像間のスペースを均等に */
+    gap: 20px; /* 画像間の隙間 */
+}
+
+.gallery-item {
+    width: calc(33.333% - 20px); /* 3列表示。gapを考慮 */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden; /* 画像がはみ出ないように */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05); /* ホバー時に少し拡大 */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px; /* 高さを固定 */
+    object-fit: cover; /* アスペクト比を保ったままコンテナにフィット */
+    display: block;
+}
+
+.gallery-item p {
+    padding: 10px;
+    font-size: 0.9em;
+    color: #555;
+    text-align: center;
+}
+
+/* フッタースタイル */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #35424a;
+    color: #ffffff;
+    margin-top: 30px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+    .gallery-item {
+        width: calc(50% - 15px); /* 2列表示 */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-item {
+        width: 100%; /* 1列表示 */
+    }
+}
